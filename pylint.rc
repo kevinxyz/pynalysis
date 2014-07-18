@@ -40,7 +40,19 @@ load-plugins=
 #disable=R0903,R0914,C0103,C0111
 
 # more lenient checks
-disable=C0103,C0111,C0301,C0303,I0011,R0904,R0201,R0801,R0901,R0903,R0914,W0232
+#C0103: Invalid %s name "%s"
+#C0111: Missing %s docstring
+#C0301: Line too long (%s/%s)
+#C0303: Trailing whitespace
+#I0011: Locally disabling %s
+#R0201: Method could be a function
+#R0801: Similar lines in %s files
+#R0901: Too many ancestors (%s/%s)
+#R0903: Too few public methods (%s/%s)
+#R0904: Too many public methods (%s/%s)
+#R0914: Too many local variables (%s/%s)
+#W0232: Class has no __init__ method
+disable=C0103,C0111,C0301,C0303,I0011,R0201,R0801,R0901,R0903,R0904,R0913,R0914,W0232
 
 
 [REPORTS]
@@ -133,7 +145,7 @@ zope=no
 
 # List of members which are set dynamically and missed by pylint inference
 # system, and so shouldn't trigger E0201 when accessed.
-generated-members=REQUEST,acl_users,aq_parent
+generated-members=REQUEST,acl_users,aq_parent,objects,DoesNotExist
 
 
 [BASIC]
